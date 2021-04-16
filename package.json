@@ -88,12 +88,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ethereumjs/ethereumjs-monorepo.git"
+    "url": "https://github.com/overliner/ethereumjs-devp2p.git"
   },
-  "homepage": "https://github.com/ethereumjs/ethereumjs-monorepo/tree/master/packages/devp2p#readme",
-  "bugs": {
-    "url": "https://github.com/ethereumjs/ethereumjs-monorepo/issues?q=is%3Aissue+label%3A%22package%3A+devp2p%22"
-  },
+  "homepage": "https://github.com/overliner/ethereumjs-devp2p#readme",
   "contributors": [
     "Alex Beregszaszi <alex@rtfs.hu>",
     "Kirill Fomichev <fanatid@ya.ru> (https://github.com/fanatid)",
