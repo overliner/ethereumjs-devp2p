@@ -1,5 +1,5 @@
 {
-  "name": "ethereumjs-devp2p",
+  "name": "@ethereumjs/devp2p",
   "version": "3.0.3",
   "description": "A JavaScript repaired implementation of ÐΞVp2p",
   "license": "MIT",
@@ -46,6 +46,9 @@
     "base64url": "^3.0.1",
     "bl": "^1.1.2",
     "debug": "^2.2.0",
+    "ethereumjs-common": "^1.5.2",
+    "@ethereumjs/devp2p": "git+https://github.com/overliner/ethereumjs-devp2p.git",
+    "ethereumjs-devp2p": "git+https://github.com/overliner/ethereumjs-devp2p.git",
     "ethereumjs-util": "^7.0.10",
     "hi-base32": "^0.5.0",
     "inherits": "^2.0.1",
@@ -60,6 +63,10 @@
     "secp256k1": "^4.0.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.15",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.13.15",
     "@ethereumjs/block": "^3.2.1",
     "@ethereumjs/config-coverage": "^2.0.0",
     "@ethereumjs/config-typescript": "^2.0.0",

@@ -144,17 +144,21 @@ class ETH extends events_1.EventEmitter {
         util_1.assertEq(this._status[0], this._peerStatus[0], 'Protocol version mismatch', debug);
         util_1.assertEq(this._status[1], this._peerStatus[1], 'NetworkId mismatch', debug);
         util_1.assertEq(this._status[4], this._peerStatus[4], 'Genesis block mismatch', debug);
+        const networkId = this._peerStatus[1];
+        const td = Buffer.from(this._peerStatus[2]);
+        const bestHash = Buffer.from(this._peerStatus[3].toString());
+        const genesisHash = Buffer.from(this._peerStatus[4].toString());
         const status = {
-            networkId: this._peerStatus[1],
-            td: Buffer.from(this._peerStatus[2]),
-            bestHash: Buffer.from(this._peerStatus[3]),
-            genesisHash: Buffer.from(this._peerStatus[4]),
+            networkId,
+            td,
+            bestHash,
+            genesisHash
         };
-        if (this._version >= 64) {
-            util_1.assertEq(this._peerStatus[5].length, 2, 'Incorrect forkId msg format', debug);
-            this._validateForkId(this._peerStatus[5]);
-            status['forkId'] = this._peerStatus[5];
-        }
+        //if (this._version >= 66) {
+        //  assertEq(this._peerStatus[5].length, 2, 'Incorrect forkId msg format', debug)
+        //  this._validateForkId(this._peerStatus[5] as Buffer[])
+        //  status['forkId'] = this._peerStatus[5]
+        //}
         this.emit('status', status);
     }
     getVersion() {
