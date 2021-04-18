@@ -60,7 +60,7 @@
     "multiaddr": "^7.4.3",
     "rlp": "^2.2.4",
     "scanf": "^1.1.2",
-    "secp256k1": "^4.0.2"
+    "secp256k1": "git+https://github.com/cryptocoinjs/secp256k1-node.git"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.14",
