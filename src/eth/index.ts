@@ -132,7 +132,7 @@ export class ETH extends EventEmitter {
     if (peerFork === null) {
       const msg = 'Unknown fork hash'
       debug(msg)
-      throw new assert.AssertionError({ message: msg })
+      //throw new assert.AssertionError({ message: msg })
     }
 
     if (!c.hardforkGteHardfork(peerFork.name, this._hardfork)) {
