@@ -144,9 +144,7 @@ class RLPx extends events_1.EventEmitter {
             throw new Error('Server already destroyed');
     }
     _getOpenSlots() {
-        //return Math.max(this._maxPeers - this._peers.size, 0)
-        return 1;
-        //return Math.max(10000 - this._peers.size, 0)
+        return Math.max(this._maxPeers - this._peers.size, 0);
     }
     _connectToPeer(peer) {
         this.connect(peer).catch((err) => {

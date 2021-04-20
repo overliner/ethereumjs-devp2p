@@ -158,13 +158,13 @@ export class DPT extends EventEmitter {
       this._server
         .ping(peer)
         .catch((_err: Error) => {
-          this.banlist.add(peer, ms('5m'))
+          this.banlist.add(peer, ms('50m'))
           this._kbucket.remove(peer)
           err = err || _err
         })
         .then(() => {
           if (++count < oldPeers.length) return
-          if (err === null) this.banlist.add(newPeer, ms('5m'))
+          if (err === null) this.banlist.add(newPeer, ms('50m'))
           else this._kbucket.add(newPeer)
         })
     }
@@ -211,7 +211,7 @@ export class DPT extends EventEmitter {
       this._kbucket.add(peer)
       return peer
     } catch (err) {
-      this.banlist.add(obj, ms('5m'))
+      this.banlist.add(obj, ms('50m'))
       throw err
     }
   }
