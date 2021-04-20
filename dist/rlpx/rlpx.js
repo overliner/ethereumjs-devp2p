@@ -212,7 +212,7 @@ class RLPx extends events_1.EventEmitter {
                         address: peer._socket.remoteAddress,
                         tcpPort: peer._socket.remotePort,
                     },
-                    ts: (Date.now() + ms_1.default('5m')),
+                    ts: (Date.now() + 15000),
                 });
             }
             const id = peer.getId();

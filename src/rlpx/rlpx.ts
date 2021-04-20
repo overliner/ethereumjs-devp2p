@@ -251,7 +251,7 @@ export class RLPx extends EventEmitter {
             address: peer._socket.remoteAddress,
             tcpPort: peer._socket.remotePort,
           },
-          ts: (Date.now() + ms('5m')) as number,
+          ts: (Date.now() + 15000) as number,
         })
       }
 
