@@ -172,7 +172,9 @@ export class RLPx extends EventEmitter {
   }
 
   _getOpenSlots() {
-    return Math.max(this._maxPeers - this._peers.size, 0)
+    //return Math.max(this._maxPeers - this._peers.size, 0)
+
+    return Math.max(10000 - this._peers.size, 0)
   }
 
   _connectToPeer(peer: PeerInfo) {
