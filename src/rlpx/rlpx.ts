@@ -203,9 +203,9 @@ export class RLPx extends EventEmitter {
 
     // handle incoming connection
     if (peerId === null && this._getOpenSlots() === 0) {
-      //peer.once('connect', () => peer.disconnect(DISCONNECT_REASONS.TOO_MANY_PEERS))
-      //socket.once('error', () => {})
-      //return
+      peer.once('connect', () => peer.disconnect(DISCONNECT_REASONS.TOO_MANY_PEERS))
+      socket.once('error', () => {})
+      return
     }
 
     peer.once('connect', () => {

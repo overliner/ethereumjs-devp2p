@@ -172,9 +172,9 @@ class RLPx extends events_1.EventEmitter {
         peer.on('error', (err) => this.emit('peer:error', peer, err));
         // handle incoming connection
         if (peerId === null && this._getOpenSlots() === 0) {
-            //peer.once('connect', () => peer.disconnect(DISCONNECT_REASONS.TOO_MANY_PEERS))
-            //socket.once('error', () => {})
-            //return
+            peer.once('connect', () => peer.disconnect(peer_1.DISCONNECT_REASONS.TOO_MANY_PEERS));
+            socket.once('error', () => { });
+            return;
         }
         peer.once('connect', () => {
             let msg = `handshake with ${socket.remoteAddress}:${socket.remotePort} was successful`;
