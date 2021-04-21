@@ -144,8 +144,9 @@ class RLPx extends events_1.EventEmitter {
             throw new Error('Server already destroyed');
     }
     _getOpenSlots() {
-        console.log(Math.max(this._maxPeers - this._peers.size, 0));
-        return Math.max(this._maxPeers - this._peers.size, 0);
+        console.log('getOpenSlots' + Math.max(this._maxPeers - this._peers.size, 0));
+        //return Math.max(this._maxPeers - this._peers.size, 0)
+        return 1;
     }
     _connectToPeer(peer) {
         this.connect(peer).catch((err) => {
@@ -174,8 +175,8 @@ class RLPx extends events_1.EventEmitter {
         // handle incoming connection
         if (peerId === null && this._getOpenSlots() === 0) {
             //peer.once('connect', () => peer.disconnect(DISCONNECT_REASONS.TOO_MANY_PEERS))
-            socket.once('error', () => { });
-            return;
+            //socket.once('error', () => {})
+            //return
         }
         peer.once('connect', () => {
             let msg = `handshake with ${socket.remoteAddress}:${socket.remotePort} was successful`;
