@@ -69,7 +69,7 @@ class DPT extends events_1.EventEmitter {
             this._server
                 .ping(peer)
                 .catch((_err) => {
-                this.banlist.add(peer, ms_1.default('50m'));
+                this.banlist.add(peer, ms_1.default('5m'));
                 this._kbucket.remove(peer);
                 err = err || _err;
             })
@@ -77,7 +77,7 @@ class DPT extends events_1.EventEmitter {
                 if (++count < oldPeers.length)
                     return;
                 if (err === null)
-                    this.banlist.add(newPeer, ms_1.default('50m'));
+                    this.banlist.add(newPeer, ms_1.default('5m'));
                 else
                     this._kbucket.add(newPeer);
             });
@@ -125,7 +125,7 @@ class DPT extends events_1.EventEmitter {
             return peer;
         }
         catch (err) {
-            this.banlist.add(obj, ms_1.default('50m'));
+            this.banlist.add(obj, ms_1.default('5m'));
             throw err;
         }
     }
