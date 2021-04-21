@@ -144,6 +144,7 @@ class RLPx extends events_1.EventEmitter {
             throw new Error('Server already destroyed');
     }
     _getOpenSlots() {
+        console.log(Math.max(this._maxPeers - this._peers.size, 0));
         return Math.max(this._maxPeers - this._peers.size, 0);
     }
     _connectToPeer(peer) {
@@ -172,7 +173,7 @@ class RLPx extends events_1.EventEmitter {
         peer.on('error', (err) => this.emit('peer:error', peer, err));
         // handle incoming connection
         if (peerId === null && this._getOpenSlots() === 0) {
-            peer.once('connect', () => peer.disconnect(peer_1.DISCONNECT_REASONS.TOO_MANY_PEERS));
+            //peer.once('connect', () => peer.disconnect(DISCONNECT_REASONS.TOO_MANY_PEERS))
             socket.once('error', () => { });
             return;
         }
