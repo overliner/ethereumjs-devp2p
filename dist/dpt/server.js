@@ -42,7 +42,7 @@ class Server extends events_1.EventEmitter {
         this._endpoint = options.endpoint || { address: '0.0.0.0', udpPort: null, tcpPort: null };
         this._requests = new Map();
         this._parityRequestMap = new Map();
-        this._requestsCache = new LRUCache({ max: 1000, maxAge: ms_1.default('1s'), stale: false });
+        this._requestsCache = new LRUCache({ max: 5000, maxAge: ms_1.default('2s'), stale: false });
         const createSocket = options.createSocket || dgram.createSocket.bind(null, { type: 'udp4' });
         this._socket = createSocket();
         if (this._socket) {

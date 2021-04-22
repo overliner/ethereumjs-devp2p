@@ -56,7 +56,7 @@ export class Server extends EventEmitter {
     this._endpoint = options.endpoint || { address: '0.0.0.0', udpPort: null, tcpPort: null }
     this._requests = new Map()
     this._parityRequestMap = new Map()
-    this._requestsCache = new LRUCache({ max: 1000, maxAge: ms('1s'), stale: false })
+    this._requestsCache = new LRUCache({ max: 5000, maxAge: ms('2s'), stale: false })
 
     const createSocket = options.createSocket || dgram.createSocket.bind(null, { type: 'udp4' })
     this._socket = createSocket()
