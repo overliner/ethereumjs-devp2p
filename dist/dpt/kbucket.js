@@ -4,7 +4,7 @@ exports.KBucket = void 0;
 const events_1 = require("events");
 const _KBucket = require("k-bucket");
 const KBUCKET_SIZE = 64;
-const KBUCKET_CONCURRENCY = 16;
+const KBUCKET_CONCURRENCY = 3;
 class KBucket extends events_1.EventEmitter {
     constructor(localNodeId) {
         super();
