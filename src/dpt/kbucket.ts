@@ -2,8 +2,8 @@ import { EventEmitter } from 'events'
 import _KBucket = require('k-bucket')
 import { PeerInfo } from './dpt'
 
-const KBUCKET_SIZE = 16 
-const KBUCKET_CONCURRENCY = 3 
+const KBUCKET_SIZE =  128 
+const KBUCKET_CONCURRENCY = 16 
 
 export interface CustomContact extends PeerInfo {
   id: Uint8Array | Buffer

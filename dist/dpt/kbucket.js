@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.KBucket = void 0;
 const events_1 = require("events");
 const _KBucket = require("k-bucket");
-const KBUCKET_SIZE = 16;
-const KBUCKET_CONCURRENCY = 3;
+const KBUCKET_SIZE = 128;
+const KBUCKET_CONCURRENCY = 16;
 class KBucket extends events_1.EventEmitter {
     constructor(localNodeId) {
         super();
